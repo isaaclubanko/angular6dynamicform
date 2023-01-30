@@ -27,7 +27,7 @@ export class DynamicFormComponent implements OnInit {
   public selectBoxOption: string = ''
 
   constructor(
-    private wiseService: WiseService
+    protected wiseService: WiseService
   ) { }
 
   ngOnInit() {

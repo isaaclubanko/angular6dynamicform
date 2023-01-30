@@ -7,12 +7,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { DynamicFormDisplayComponent } from './dynamic-form-display/dynamic-form-display.component';
+import { AccountInfoComponent } from './account-info/account-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DynamicFormComponent,
-    DynamicFormDisplayComponent
+    DynamicFormDisplayComponent,
+    AccountInfoComponent
   ],
   imports: [
     BrowserModule,
