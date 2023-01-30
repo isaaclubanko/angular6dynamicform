@@ -1,0 +1,17 @@
+<p>
+  dynamic-form works!
+</p>
+
+
+<h2>Quote ID: {{ quoteID }}</h2>
+<button class="btn btn-primary" (click)="getAPIData()">Get Requirements</button>
+
+<select class="form-select" aria-label="Default select example" [(ngModel)]="selectBoxOption" (ngModelChange)="updateFormOption()">
+    <option>--</option>
+    <option *ngFor="let data of APIDynamicForms" value="{{data.title}}" [class.selected]="data === selectBoxOption" >{{ data.title }}</option>
+</select>
+
+
+
+<button class="btn" (click)="printSelectedForm()">Print Form to Console</button>
+<app-dynamic-form-display [form]="form" [fields]="selectedForm.fields"></app-dynamic-form-display>
