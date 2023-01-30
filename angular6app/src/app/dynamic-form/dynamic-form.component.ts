@@ -4,12 +4,6 @@ import { WiseService } from '../wise.service';
 
 import { DynamicFormResponse, DynamicFormField } from '../models/dynamic-form.model';
 
-interface dynamicFormObject {
-  fields: any[]
-  title: string
-  type: string
-}
-
 @Component({
   selector: 'app-dynamic-form',
   templateUrl: './dynamic-form.component.html',
@@ -18,13 +12,15 @@ interface dynamicFormObject {
 export class DynamicFormComponent implements OnInit {
 
   public APIDynamicForms: DynamicFormResponse[] =[];
-  public selectedForm: dynamicFormObject = {
-    fields: [],
-    title: '',
-    type: ''
-  };
+
+  // TODO: Messy, try to use object destructuring, default fields or soemthing better
+  public selectedForm: DynamicFormResponse = new DynamicFormResponse(
+    '',
+    '',
+    []
+  );
   public form =  new FormGroup({});
-  public selectBoxOption: string = ''
+  public selectBoxOption: string = '';
 
   constructor(
     protected wiseService: WiseService
@@ -32,11 +28,6 @@ export class DynamicFormComponent implements OnInit {
 
   ngOnInit() {
 
-  }
-  getAPIData(){
-    this.wiseService.getAccountRequirements().subscribe(data => {
-      this.APIDynamicForms = data
-    })
   }
 
   updateFormOption(): void {
