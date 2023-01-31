@@ -14,11 +14,11 @@ export class DynamicFormComponent implements OnInit {
   public APIDynamicForms: DynamicFormResponse[] =[];
 
   // TODO: Messy, try to use object destructuring, default fields or soemthing better
-  public selectedForm: DynamicFormResponse = new DynamicFormResponse(
-    '',
-    '',
-    []
-  );
+  public selectedForm: DynamicFormResponse = {
+    type: '',
+    title: '',
+    fields: []
+  }
   public form =  new FormGroup({});
   public selectBoxOption: string = '';
 

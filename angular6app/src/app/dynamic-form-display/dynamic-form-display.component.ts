@@ -10,17 +10,17 @@ import { DynamicFormResponse, DynamicFormField } from '../models/dynamic-form.mo
 })
 export class DynamicFormDisplayComponent implements OnInit {
 
-  // TODO: Messy, try to use object destructuring, default fields or soemthing better
+
   @Input() fields: DynamicFormField[] = [
-    new DynamicFormField(
-      '',
-      [{
-          key: "" ,
-          name: "", 
-          type: "", 
-          refreshRequirementsOnChange: false,
+    {
+      name: '',
+      group: [{
+        key: '',
+        name: '',
+        type: ''
+        refreshRequirementsOnChange: false
       }]
-    )
+    }
   ];
 
   @Input() form!: FormGroup

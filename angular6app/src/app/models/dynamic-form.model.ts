@@ -34,6 +34,8 @@ export class DynamicFormResponse {
     ){}
 }
 
+
+// TODO: Sample Adapter Profile, use Adapter pattern in future
 // @Injectable({
 //     providedIn: 'root'
 // })
